@@ -8,7 +8,7 @@
       "name": "索尼1 WH-1000XM3 头戴式耳机 麒麟显卡 16G内...",
       "price": 250,
       "counter": "猜你喜欢",
-      "showComment": true
+      "comment": "好物也可以不贵"
     },
     {
       "id": 2,
@@ -17,7 +17,8 @@
       "imgSrc": "http://localhost:8080/assets/images/7a406989-061b-4f69-baa1-6fa499aa091d.jpg",
       "name": "索尼1 WH-1000XM3 头戴式耳机 麒麟显卡 16G内...",
       "price": 250,
-      "counter": "猜你喜欢"
+      "counter": "猜你喜欢",
+      "comment": "xxxxx"
     },
     {
       "id": 3,
@@ -44,7 +45,6 @@
       "name": "索尼1 WH-1000XM3 头戴式耳机 麒麟显卡 16G内...",
       "price": 250,
       "counter": "猜你喜欢",
-      "showComment": true,
       "id": 5
     },
     {

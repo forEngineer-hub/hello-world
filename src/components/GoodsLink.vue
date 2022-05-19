@@ -1,25 +1,29 @@
 <template>
-  <a class="goods-link" :href="link"  @mouseover="showComment = !showComment">
+  <a
+    class="goods-link"
+    :href="link"
+    @mouseover="show"
+    @mouseleave="data_showComment=false"
+  >
     <div class="info discount">{{ tittle }}</div>
-    <img :src="imgSrc" :alt="name"  />
-    <p class="name" >{{ name }}</p>
+    <img :src="imgSrc" :alt="name" />
+    <p class="name">{{ name }}</p>
     <p class="item_price">{{ price }}</p>
     <!-- <p class="counter">{{ counter }}</p> -->
-   
+
     <transition name="slide-fade">
-     <div v-if="showComment" class="comment">
-      <p>新蜂精选</p>
-      <p>好物也可以不贵</p>
-    </div>
-  </transition>
+      <div v-if="data_showComment" class="comment">
+        <p>{{comment}}</p>
+      </div>
+    </transition>
   </a>
 </template>
 
 <script>
 export default {
-   data() {
+  data() {
     return {
-      showComment:false
+      data_showComment: false,
     };
   },
   props: {
@@ -28,8 +32,14 @@ export default {
     imgSrc: String,
     name: String,
     price: Number,
-    // counter: String,
-    // showComment:Boolean
+    comment: String,
+  },
+  methods: {
+    show() {
+      if(this.comment){
+        this.data_showComment = true;
+      }
+    },
   },
 };
 </script>
@@ -63,17 +73,19 @@ export default {
   left: 0;
   right: 0;
   /* transform: translateY(101%); */
-  transition: transform 0.4s;
+  /* transition: transform 0.4s; */
   box-sizing: border-box;
   height: 70px;
   padding: 10px 0 0 30px;
   background-color: #1baeae;
   color: #fff;
-  text-align: left;
+  text-align: center;
+  opacity: 0.8;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
 }
 
 .slide-fade-enter-from,
