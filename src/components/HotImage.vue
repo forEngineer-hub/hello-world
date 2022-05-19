@@ -10,7 +10,8 @@ export default {
   components: { HotImageLink },
   props: {
     goods:Object
-  },
+  }
+
 }
 </script>
 

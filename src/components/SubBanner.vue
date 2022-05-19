@@ -1,20 +1,20 @@
 <template>
   <div id="sub_banner">
     <hot-image
-      v-for="(goods, index) in hotGoods"
+      v-for="(goods, index) in state.hotGoods"
       v-bind:goods="goods"
       :key="index"
     ></hot-image>
   </div>
 </template>
 
-<script>
+<script setup>
 import HotImage from "./HotImage.vue";
-import { reactive, onMounted, toRefs } from "vue";
-export default {
-  components: { HotImage },
-  setup(props) {
-    console.log(props.title);
+import { reactive, onMounted } from "vue";
+// export default {
+  // components: { HotImage },
+  // setup(props) {
+    // console.log(props.title);
 
     const state = reactive({
       hotGoods: [],
@@ -25,19 +25,21 @@ export default {
       const headers = { Accept: "application/json" };
       const goodses = await fetch(url, { headers });
       const j = await goodses.json();
-      const newArr = j.map((goods) => {
-        const { link, imgSrc, name } = goods;
-        return { link, imgSrc, name };
-      });
+      // const newArr = j.map((goods) => {
+      //   const { link, imgSrc, name } = goods;
+      //   return { link, imgSrc, name };
+      // });
 
-      state.hotGoods = [...newArr];
-      console.log("in setNewGoodses method", state.hotGoods);
+      // state.hotGoods = [...newArr];
+      state.hotGoods = [...j];
+     // const hotGoods2 = toRef(state,'hotGoods');
+      
     });
-    return {
-      ...toRefs(state),
-    };
-  },
-};
+//     return {
+//       ...toRefs(state),
+//     };
+//   },
+// };
 </script>
 
 <style>
