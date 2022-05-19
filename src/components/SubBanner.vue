@@ -1,15 +1,43 @@
 <template>
   <div id="sub_banner">
-    
+    <hot-image
+      v-for="(goods, index) in hotGoods"
+      v-bind:goods="goods"
+      :key="index"
+    ></hot-image>
   </div>
 </template>
 
 <script>
-
+import HotImage from "./HotImage.vue";
+import { reactive, onMounted, toRefs } from "vue";
 export default {
- components: {  },
-  
-}
+  components: { HotImage },
+  setup(props) {
+    console.log(props.title);
+
+    const state = reactive({
+      hotGoods: [],
+    });
+
+    onMounted(async () => {
+      const url = "http://localhost:3000/hotGoodses";
+      const headers = { Accept: "application/json" };
+      const goodses = await fetch(url, { headers });
+      const j = await goodses.json();
+      const newArr = j.map((goods) => {
+        const { link, imgSrc, name } = goods;
+        return { link, imgSrc, name };
+      });
+
+      state.hotGoods = [...newArr];
+      console.log("in setNewGoodses method", state.hotGoods);
+    });
+    return {
+      ...toRefs(state),
+    };
+  },
+};
 </script>
 
 <style>
