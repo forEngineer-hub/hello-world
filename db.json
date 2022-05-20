@@ -106,5 +106,51 @@
       "showComment": true,
       "id": 5
     }
+  ],
+  "categories": [
+    {
+      "categoryName": "家电 数码 手机",
+      "categories": [
+        {
+          "categoryName": "家电",
+          "categories": [
+            {
+              "categoryName": "卷发器",
+              "link": "/goods/detail/10195"
+            },
+            {
+              "categoryName": "电饭煲",
+              "link": "/goods/detail/10195"
+            }
+          ]
+        },
+        {
+          "categoryName": "数码",
+          "categories": []
+        },
+        {
+          "categoryName": "手机",
+          "categories": []
+        }
+      ]
+    },
+    {
+      "categoryName": "女装 男装 穿搭",
+      "categories": [
+        {
+          "categoryName": "女装",
+          "categories": [
+            {
+              "categoryName": "外套",
+              "link": "/goods/detail/10195"
+            },
+            {
+              "categoryName": "裙子",
+              "link": "/goods/detail/10195"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
