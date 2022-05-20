@@ -1,41 +1,10 @@
-import { createStore } from "vuex";
-
-const url = "http://localhost:3000/newGoodses";
-const headers = { Accept: "application/json" };
+import { createStore } from 'vuex'
+import category from './home/category'
+import hotGoods from './home/hotGoods'
 
 export default createStore({
-  state: {
-    newGoodses: [],
-    day: { years: [], year: new Date().getFullYear(), month: 0, day: 1 },
+  modules: {
+    category,
+    hotGoods
   },
-  mutations: {
-    //syncrous
-    setNewGoods(state, payload) {
-      state.newGoodses.push(...payload);
-      console.log("array push ", payload);
-    },
-
-    //hot goods
-  },
-  actions: {
-    //asyncronous
-    async setNewGoodses(state) {
-      const goodses = await fetch(url, { headers });
-      const j = await goodses.json();
-      state.commit("setNewGoods", j);
-      console.log("in setNewGoodses method", j);
-    },
-
-    //hot goods fetch method
-  },
-  modules: {},
-  getters: {
-    getNewGoodses: (state) => {
-      console.log("in getNewGoodses method", state.newGoodses);
-      console.log(state.newGoodses);
-      return state.newGoodses;
-    },
-
-    // hot goods getter
-  },
-});
+})

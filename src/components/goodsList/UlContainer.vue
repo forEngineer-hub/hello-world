@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import GoodsList from "./GoodsList.vue";
+import GoodsList from "../goodsList/GoodsList.vue";
 export default {
   components: { GoodsList },
 };
