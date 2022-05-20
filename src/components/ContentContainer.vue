@@ -1,5 +1,6 @@
 <template>
   <div class="content-container">
+    <date-picker></date-picker>
       <item-cat></item-cat>
       <sub-banner></sub-banner>
       <ul-container></ul-container>
@@ -10,8 +11,9 @@
 import SubBanner from './SubBanner.vue'
 import UlContainer from './UlContainer.vue'
 import ItemCat from './ItemCat.vue'
+import DatePicker from './DatePicker.vue'
 export default {
-  components: { UlContainer, SubBanner,ItemCat },
+  components: { UlContainer, SubBanner,ItemCat,DatePicker },
 
 }
 </script>

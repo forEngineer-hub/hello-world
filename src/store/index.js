@@ -6,6 +6,7 @@ const headers = { Accept: "application/json" };
 export default createStore({
   state: {
     newGoodses: [],
+    day: { years: [], year: new Date().getFullYear(), month: 0, day: 1 },
   },
   mutations: {
     //syncrous
