@@ -164,6 +164,99 @@
           ]
         }
       ]
+    },
+    {
+      "categoryName": "女装 男装 穿搭",
+      "categories": [
+        {
+          "categoryName": "女装",
+          "categories": [
+            {
+              "categoryName": "外套",
+              "link": "/goods/detail/10195"
+            },
+            {
+              "categoryName": "裙子",
+              "link": "/goods/detail/10195"
+            }
+          ]
+        },
+        {
+          "categoryName": "男装",
+          "categories": [
+            {
+              "categoryName": "领带",
+              "link": "/goods/detail/10195"
+            },
+            {
+              "categoryName": "皮鞋",
+              "link": "/goods/detail/10195"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "女装 男装 穿搭",
+      "categories": [
+        {
+          "categoryName": "女装",
+          "categories": [
+            {
+              "categoryName": "外套",
+              "link": "/goods/detail/10195"
+            },
+            {
+              "categoryName": "裙子",
+              "link": "/goods/detail/10195"
+            }
+          ]
+        },
+        {
+          "categoryName": "男装",
+          "categories": [
+            {
+              "categoryName": "领带",
+              "link": "/goods/detail/10195"
+            },
+            {
+              "categoryName": "皮鞋",
+              "link": "/goods/detail/10195"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "女装 男装 穿搭",
+      "categories": [
+        {
+          "categoryName": "女装",
+          "categories": [
+            {
+              "categoryName": "外套",
+              "link": "/goods/detail/10195"
+            },
+            {
+              "categoryName": "裙子",
+              "link": "/goods/detail/10195"
+            }
+          ]
+        },
+        {
+          "categoryName": "男装",
+          "categories": [
+            {
+              "categoryName": "领带",
+              "link": "/goods/detail/10195"
+            },
+            {
+              "categoryName": "皮鞋",
+              "link": "/goods/detail/10195"
+            }
+          ]
+        }
+      ]
     }
   ],
   "swiper": [

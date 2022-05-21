@@ -54,8 +54,10 @@ const store = useStore();
 const mouseOverFun = (event) => {
   // return (displayOrNot = "block"); is wrong ,have to .value
   // return (displayOrNot.value = "block");
-  console.log("event", event.target);
-  event.target.querySelector(".item-list").style.display = "block";
+  // console.log("event offsetTop", event.target.offsetTop);
+  // event.target.querySelector(".item-list").style.display = "block";
+  let style = "top: "+ event.target.offsetTop +"px; display: block;"
+  event.target.querySelector(".item-list").style = style;
 };
 
 const mouseLeaveFun = (event) => {
