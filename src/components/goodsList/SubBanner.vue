@@ -48,12 +48,13 @@ import { reactive, onMounted } from "vue";
   width: 1226px;
   flex-shrink: 0;
   justify-content: space-between;
-  height: 295px;
+  /* height: 295px; */
   margin-top: 15px;
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style-type: none;
   font-family: Microsoft Yahei;
+  flex-wrap: wrap;
 }
 </style>

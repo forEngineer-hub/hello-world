@@ -190,4 +190,5 @@ let categories = computed(() => store.getters.getCategories);
   font-weight: normal;
   text-decoration: underline;
 }
+
 </style>
