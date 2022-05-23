@@ -1,6 +1,5 @@
 <template>
   <swiper
-    :options="swiperOption"
     :slidesPerView="3"
     :spaceBetween="30"
     :slidesPerGroup="3"
@@ -43,13 +42,10 @@ export default {
     });
 
     let slides = computed(() => store.getters.getImages);
-    let swiperOption = {
-     initialSlide: 1
-    };
+
     return {
       slides,
       modules: [Pagination, Navigation],
-      swiperOption,
     };
   },
 };

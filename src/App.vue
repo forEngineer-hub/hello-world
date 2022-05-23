@@ -1,9 +1,9 @@
 <template>
-  <content-container></content-container>
+   <router-view></router-view>
 </template>
 
 <script>
-import ContentContainer from "./pages/HomePage.vue";
+
 
 export default {
   data() {
@@ -13,7 +13,7 @@ export default {
   },
   name: "App",
   components: {
-    ContentContainer,
+
   },
 
   methods: {
