@@ -308,5 +308,9 @@
       "goodsId": 10196,
       "goodsName": "iphone"
     }
-  ]
+  ],
+  "postCode":{
+    "code" : "10070-256",
+    "address": "秋葉原"
+  }
 }
