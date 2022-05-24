@@ -1,3 +1,4 @@
 {
-    "/goods/detail/:goodsId": "/goodsDetail?goodsId=:goodsId"
+    "/goods/detail/:goodsId": "/goodsDetail?goodsId=:goodsId",
+    "/reviews/:goodsId": "/reviews?goodsId=:goodsId"
 }

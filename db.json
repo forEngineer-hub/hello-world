@@ -312,5 +312,21 @@
   "postCode":{
     "code" : "10070-256",
     "address": "秋葉原"
-  }
+  },
+  "reviews":[
+    {
+      "goodsId": 10005,
+      "review" : "安くて美味しい"
+    },
+    {
+      "goodsId": 10006,
+      "review" : "安くて美味しい"
+    },
+    {
+      "goodsId": 10007,
+      "review" : "安くて美味しい"
+    }
+
+  ]
+
 }
