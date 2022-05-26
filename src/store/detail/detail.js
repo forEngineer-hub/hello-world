@@ -1,10 +1,13 @@
 const url = "http://localhost:3000/goods/detail/";
+const url2 = "http://localhost:3000/review/goodsId/:goodsId/offset/:offset";
 const headers = { Accept: "application/json" };
 
 export default {
   state: {
     goods: {},
     reviews: {},
+    reviewList: [],
+    showed: false,
   },
   mutations: {
     //syncrous
@@ -17,6 +20,13 @@ export default {
       state.reviews = payload[0];
       console.log("array push ", payload[0]);
     },
+    setReviewList(state, payload) {
+      //state.reviewList =[];
+      state.reviewList.push(...payload);
+    },
+    changeShowed(state, payload) {
+      state.showed = payload;
+    },
   },
   actions: {
     //asyncronous
@@ -25,33 +35,35 @@ export default {
       const goods = await fetch(url + goodsId, { headers });
       const j = await goods.json();
       context.commit("setGoods", j);
-      console.log("in setGoods method", j);
     },
     async setReview(context, payload) {
-      const url2 =
-        "http://localhost:3000/review/goodsId/:goodsId/offset/:offset";
-      console.log("payload", payload);
-      const { goodsId, offset } =  payload;
+      const { goodsId, offset } = payload;
       const newUrl = url2
         .replace(":goodsId", goodsId)
         .replace(":offset", offset);
-      console.log("url", newUrl);
       const goodses = await fetch(newUrl, { headers });
       const j = await goodses.json();
-      context.commit("setReview", j);
-      console.log("in setReview method", j);
+      
+      if (offset === 0) {
+        context.commit("setReview", j);
+      } else {
+        context.commit("changeShowed", true);
+        context.commit("setReviewList", j[0].reviewList);
+      }
     },
   },
   getters: {
     getGoods: (state) => {
-      console.log("in getGoods method", state.goods);
-      console.log(state.goods);
       return state.goods;
     },
     getReview: (state) => {
-      console.log("in getReview method", state.review);
-      console.log(state.review);
-      return state.review;
+      return state.reviews;
+    },
+    getReviewList: (state) => {
+      return state.reviewList;
+    },
+    getShowed: (state) => {
+      return state.showed;
     },
   },
 };
