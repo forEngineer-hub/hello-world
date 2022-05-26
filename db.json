@@ -299,34 +299,64 @@
   ],
   "goodsDetail": [
     {
-      "id":1,
+      "id": 1,
       "goodsId": 10195,
       "goodsName": "xiaomi"
     },
     {
-      "id":2,
+      "id": 2,
       "goodsId": 10196,
       "goodsName": "iphone"
     }
   ],
-  "postCode":{
-    "code" : "10070-256",
+  "postCode": {
+    "code": "10070-256",
     "address": "秋葉原"
   },
-  "reviews":[
+  "review": [
     {
-      "goodsId": 10005,
-      "review" : "安くて美味しい"
+      "goodsId": 10196,
+      "offset": 0,
+      "reviewCount": 7,
+      "reviewList": [
+        {
+          "reviewId": "r00002",
+          "code": 500,
+          "message": "もう押したよ"
+        },
+        {
+          "reviewId": "r00003",
+          "code": 400,
+          "message": "ありがとうございます"
+        },
+        {
+          "reviewId": "r00003",
+          "code": 400,
+          "message": "ありがとうございます"
+        }
+      ]
     },
     {
-      "goodsId": 10006,
-      "review" : "安くて美味しい"
-    },
-    {
-      "goodsId": 10007,
-      "review" : "安くて美味しい"
+      "goodsId": 10196,
+      "offset": 3,
+      "reviewCount": 7,
+      "reviewList": [
+        {
+          "reviewId": "r00002",
+          "code": 500,
+          "message": "offset3もう押したよ"
+        },
+        {
+          "reviewId": "r00003",
+          "code": 400,
+          "message": "offset3ありがとうございます"
+        },
+        {
+          "reviewId": "r00003",
+          "code": 400,
+          "message": "offset3ありがとうございます"
+        }
+      ]
     }
-
   ]
-
 }

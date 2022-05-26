@@ -1,4 +1,6 @@
 {
     "/goods/detail/:goodsId": "/goodsDetail?goodsId=:goodsId",
-    "/reviews/:goodsId": "/reviews?goodsId=:goodsId"
+    "/reviews/:goodsId": "/reviews?goodsId=:goodsId",
+    "/reveiw/:reviewId" : "/reveiw?reviewId=:reviewId",
+    "/review/goodsId/:goodsId/offset/:offset" :"/review?goodsId=:goodsId&offset=:offset"
 }
