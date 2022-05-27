@@ -126,5 +126,5 @@ export default {
 };
 </script>
 <style>
-@import "../css/todo.css";
+@import "../../css/todo.css";
 </style>
