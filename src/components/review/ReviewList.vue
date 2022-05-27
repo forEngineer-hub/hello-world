@@ -54,9 +54,11 @@ onMounted(() => {
 });
 
 const reviewCount = computed(() => store.getters.getReview.reviewCount);
+// const reviewCount = store.state.reviews.reviewCount;
 const reviewList = computed(() => store.getters.getReview.reviewList);
 const reviewList2 = computed(() => store.getters.getReviewList);
 const showed = computed(() => store.getters.getShowed);
+
 
 const btnText = computed(() => {
   if (!showed.value && reviewList.value !== undefined) {

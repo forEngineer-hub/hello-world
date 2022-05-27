@@ -30,11 +30,15 @@ export default {
   },
   actions: {
     //asyncronous
-    async setGoods(context, payload) {
+    async setGoods({ commit }, payload) {
       const goodsId = payload.goodsId;
-      const goods = await fetch(url + goodsId, { headers });
-      const j = await goods.json();
-      context.commit("setGoods", j);
+      //const goods = await fetch(url + goodsId, { headers });
+      // const j = await goods.json();
+      // let j = null;
+      fetch(url + goodsId, { headers })
+        .then((res) => res.json())
+        .then((data) => commit("setGoods", data));
+      //commit("setGoods", j);
     },
     async setReview(context, payload) {
       const { goodsId, offset } = payload;
@@ -43,7 +47,7 @@ export default {
         .replace(":offset", offset);
       const goodses = await fetch(newUrl, { headers });
       const j = await goodses.json();
-      
+
       if (offset === 0) {
         context.commit("setReview", j);
       } else {
