@@ -8,6 +8,11 @@ export default {
     reviews: {},
     reviewList: [],
     showed: false,
+    infoList: [],
+    variants: [],
+    imgList: [],
+    size: "",
+    color: "",
   },
   mutations: {
     //syncrous
@@ -27,6 +32,40 @@ export default {
     changeShowed(state, payload) {
       state.showed = payload;
     },
+    setInfoList(state, payload) {
+      state.infoList.push(...payload);
+    },
+    setVariants(state, payload) {
+      state.variants.push(...payload);
+    },
+
+    setImgList(state, { size, color }) {
+      console.log("size, color ", size + " "+  color);
+      let imgs = state.infoList.filter(
+        (info) => info.sizeType === size && info.color === color
+      )[0].photo;
+      
+      console.log('imgs',imgs);
+      //
+      const limit = 3;
+      // 4
+      let count = imgs.length / limit;
+      count = imgs.length % limit ? count++ : count;
+      let idx = 0;
+      state.imgList = [];
+      while (idx < count) {
+        state.imgList.push(imgs.slice(idx * limit, idx * limit + limit));
+        idx++;
+      }
+      // 0 0 ~3
+      // 1 3~ 6
+    },
+    setSize(state, payload) {
+      state.size = payload;
+    },
+    setColor(state, payload) {
+      state.color = payload;
+    },
   },
   actions: {
     //asyncronous
@@ -40,6 +79,38 @@ export default {
         .then((data) => commit("setGoods", data));
       //commit("setGoods", j);
     },
+    async setGoodsInfo(context, { goodsId }) {
+      let goodsInfoUrl = "http://localhost:3000/goodsInfo/:goodsId".replace(
+        ":goodsId",
+        goodsId
+      );
+      const goodses = await fetch(goodsInfoUrl, { headers });
+      const j = await goodses.json();
+
+      context.commit("setInfoList", j[0].infoList);
+      context.commit("setVariants", j[0].variants);
+      const size = j[0].variants[0].size;
+      const color = j[0].variants[0].color[0];
+
+      context.commit("setSize", size);
+      context.commit("setColor", color);
+      context.commit("setImgList", { size, color });
+    },
+    // async setInfoList(context, payload) {
+    //   const { goodsId, offset } = payload;
+    //   const newUrl = url2
+    //     .replace(":goodsId", goodsId)
+    //     .replace(":offset", offset);
+    //   const goodses = await fetch(newUrl, { headers });
+    //   const j = await goodses.json();
+
+    //   if (offset === 0) {
+    //     context.commit("setReview", j);
+    //   } else {
+    //     context.commit("changeShowed", true);
+    //     context.commit("setReviewList", j[0].reviewList);
+    //   }
+    // },
     async setReview(context, payload) {
       const { goodsId, offset } = payload;
       const newUrl = url2
@@ -68,6 +139,21 @@ export default {
     },
     getShowed: (state) => {
       return state.showed;
+    },
+    getInfoList: (state) => {
+      return state.infoList;
+    },
+    getVariants: (state) => {
+      return state.variants;
+    },
+    getImgList: (state) => {
+      return state.imgList;
+    },
+    getSize: (state) => {
+      return state.size;
+    },
+    getColor: (state) => {
+      return state.color;
     },
   },
 };

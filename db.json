@@ -359,7 +359,107 @@
       ]
     }
   ],
-  "qaPage":[
-    
+  "qaPage": [],
+  "goodsInfo": [
+    {
+      "goodId": 10195,
+      "goodsName": "ゴムバンド付き敷きパッド",
+      "goodsDescribe": "一番冷たいが長持ちする「さらさら」極冷感面と肌になじむニット面のリバーシブル。",
+      "infoList": [
+        {
+          "sizeType": "シングル",
+          "sizeValue": "7565681",
+          "sizeDataCode": "05700010014",
+          "sku": "10195s_wh",
+          "color": "ホワイト",
+          "size": "幅100x奥行200cm",
+          "material": "ナイロン／ＰＥ／ＰＡ／ＰＵ",
+          "weight": "約1.25kg",
+          "warranty": "1年",
+          "photo": [
+            "http://localhost:8080/assets/images/goodsphoto1.jpg"
+            ,
+            "http://localhost:8080/assets/images/goodsphoto2.jpg"
+            ,
+            "http://localhost:8080/assets/images/goodsphoto3.jpg"
+            ,
+            "http://localhost:8080/assets/images/goodsphoto4.jpg"
+            ,
+             "http://localhost:8080/assets/images/goodsphoto5.jpg"
+            
+          ],
+          "price": 3990,
+          "title": "ゴムバンド付き敷きパッド　セミダブル(NクールWSP n-s WH SD)"
+        },
+        {
+          "sizeType": "シングル",
+          "sizeValue": "7565681",
+          "sizeDataCode": "05700010014",
+          "sku": "10195s_gr",
+          "color": "グレー",
+          "size": "幅100x奥行200cm",
+          "material": "ナイロン／ＰＥ／ＰＡ／ＰＵ",
+          "weight": "約1.25kg",
+          "warranty": "1年",
+          "photo": ["http://localhost:8080/assets/images/7a406989-061b-4f69-baa1-6fa499aa091d.jpg",
+            "http://localhost:8080/assets/images/7a406989-061b-4f69-baa1-6fa499aa091d.jpg",
+            "http://localhost:8080/assets/images/8fc9776e-9393-421d-998c-e516b3877dba.jpg",
+            "http://localhost:8080/assets/images/8fc9776e-9393-421d-998c-e516b3877dba.jpg",
+            "http://localhost:8080/assets/images/8fc9776e-9393-421d-998c-e516b3877dba.jpg"],
+          "price": 3990,
+          "title": "ゴムバンド付き敷きパッド　セミダブル(NクールWSP n-s GY S)"
+        },
+        {
+          "sizeType": "セミダブル",
+          "sizeValue": "7565682",
+          "sizeDataCode": "05700010017",
+          "sku": "10195m_white",
+          "color": "ホワイト",
+          "colorValue": "00100190094",
+          "colorDataParent": "05700010017",
+          "colorSrc": "https://www.nitori-net.jp/ecstatic/image/sys-master/images/8966164348958/BasicColor_WH.jpg",
+          "size": "幅120x奥行200cm",
+          "material": "ナイロン／ＰＥ／ＰＡ／ＰＵ",
+          "weight": "約1.5kg",
+          "warranty": "1年",
+          "photo": "image",
+          "price": 4990,
+          "title": "ゴムバンド付き敷きパッド　セミダブル(NクールWSP n-s DBL SD)"
+        },
+        {
+          "sizeType": "セミダブル",
+          "sizeValue": "7565682",
+          "sizeDataCode": "05700010017",
+          "sku": "10195m_blue",
+          "color": "ダークブルー",
+          "colorValue": "00100170025",
+          "colorDataParent": "05700010017",
+          "colorSrc": "https://www.nitori-net.jp/ecstatic/image/sys-master/images/8796331900958/BasicColor_DBL.jpg",
+          "size": "幅120x奥行200cm",
+          "material": "ナイロン／ＰＥ／ＰＡ／ＰＵ",
+          "weight": "約1.5kg",
+          "warranty": "1年",
+          "photo": "image",
+          "price": 4990,
+          "title": "ゴムバンド付き敷きパッド　セミダブル(NクールWSP n-s DBL D)"
+        }
+      ],
+      "variants": [
+        {
+          "size": "シングル",
+          "color": [
+            "ホワイト",
+            "グレー"
+          ]
+        },
+        {
+          "size": "セミダブル",
+          "color": [
+            "ホワイト",
+            "ダークブルー"
+          ]
+        }
+      ]
+    }
   ]
 }

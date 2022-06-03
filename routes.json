@@ -3,5 +3,6 @@
     "/reviews/:goodsId": "/reviews?goodsId=:goodsId",
     "/reveiw/:reviewId" : "/reveiw?reviewId=:reviewId",
     "/review/goodsId/:goodsId/offset/:offset" :"/review?goodsId=:goodsId&offset=:offset",
-    "/qa/page/:page/sort/date":"/qaPage"
+    "/qa/page/:page/sort/date":"/qaPage",
+    "/goodsInfo/:goodsId":"/goodsInfo?goodsId=:goodsId"
 }
