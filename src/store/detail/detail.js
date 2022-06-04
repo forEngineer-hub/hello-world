@@ -27,7 +27,7 @@ export default {
     },
     setReviewList(state, payload) {
       //state.reviewList =[];
-      state.reviewList.push(...payload);
+      state.reviewList=payload;
     },
     changeShowed(state, payload) {
       state.showed = payload;
@@ -41,16 +41,28 @@ export default {
 
     setImgList(state, { size, color }) {
       console.log("size, color ", size + " "+  color);
-      let imgs = state.infoList.filter(
+      // let imgs = state.infoList.filter(
+      //   (info) => info.sizeType === size && info.color === color
+      // )[0].photo;
+
+      // []
+      // [0] === undefined 
+       // 0 1 2 
+       // [3]
+
+      let imgs;
+      const filteredList = state.infoList.filter(
         (info) => info.sizeType === size && info.color === color
-      )[0].photo;
-      
+      )
+      if(filteredList.length > 0){
+        imgs = filteredList[0].photo;
+      }
       console.log('imgs',imgs);
       //
       const limit = 3;
       // 4
-      let count = imgs.length / limit;
-      count = imgs.length % limit ? count++ : count;
+      let count = Math.ceil(imgs.length / limit);
+      //count = imgs.length % limit ? count++ : count;
       let idx = 0;
       state.imgList = [];
       while (idx < count) {
@@ -59,6 +71,8 @@ export default {
       }
       // 0 0 ~3
       // 1 3~ 6
+      state.size = size;
+      state.color = color;
     },
     setSize(state, payload) {
       state.size = payload;
