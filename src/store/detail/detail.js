@@ -13,6 +13,7 @@ export default {
     imgList: [],
     size: "",
     color: "",
+    goodsInfo:{}
   },
   mutations: {
     //syncrous
@@ -57,6 +58,7 @@ export default {
       if(filteredList.length > 0){
         imgs = filteredList[0].photo;
       }
+      state.goodsInfo = filteredList[0];
       console.log('imgs',imgs);
       //
       const limit = 3;
