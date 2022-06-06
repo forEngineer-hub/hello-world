@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Home from "../pages/HomePage";
-import DetailPage from "../pages/DetailPage";
-import TestChange from "../pages/TestChange";
+import Home from "../pages/HomePage.vue";
+import DetailPage from "../pages/DetailPage.vue";
+import TestChange from "../pages/TestChange.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },

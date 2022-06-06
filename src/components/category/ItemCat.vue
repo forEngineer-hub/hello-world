@@ -37,10 +37,10 @@
   </div>
 </template>
 
-<script  setup>
+<script lang="ts" setup>
 import { onMounted, computed } from "vue";
 // import { mapActions, mapGetters } from "vuex";
-import { useStore } from "vuex";
+import { useStore } from "../../store/index";
 
 const store = useStore();
 
@@ -51,19 +51,21 @@ const store = useStore();
 
 //let { displayOrNot } = toRefs(state);
 
-const mouseOverFun = (event) => {
-  // return (displayOrNot = "block"); is wrong ,have to .value
-  // return (displayOrNot.value = "block");
-  // console.log("event offsetTop", event.target.offsetTop);
-  // event.target.querySelector(".item-list").style.display = "block";
-  let style = "top: "+ event.target.offsetTop +"px; display: block;"
-  event.target.querySelector(".item-list").style = style;
+const mouseOverFun = (event: { target: HTMLInputElement }) => {
+  event.target
+    .querySelector(".item-list")!
+    .setAttribute(
+      "style",
+      "top: " + event.target.offsetTop + "px; display: block;"
+    );
 };
 
-const mouseLeaveFun = (event) => {
-  // return (displayOrNot.value = "none");
+const mouseLeaveFun = (event: { target: HTMLInputElement }) => {
   console.log("event", event);
-  event.target.querySelector(".item-list").style.display = "none";
+
+  event.target
+    .querySelector(".item-list")!
+    .setAttribute("style", "display = none");
 };
 
 onMounted(() => {
@@ -192,5 +194,4 @@ let categories = computed(() => store.getters.getCategories);
   font-weight: normal;
   text-decoration: underline;
 }
-
 </style>

@@ -9,8 +9,6 @@
     <img :src="imgSrc" :alt="name" />
     <p class="name">{{ name }}</p>
     <p class="item_price">{{ price }}</p>
-    <!-- <p class="counter">{{ counter }}</p> -->
-
     <transition name="slide-fade">
       <div v-if="data_showComment" class="comment">
         <p>{{comment}}</p>

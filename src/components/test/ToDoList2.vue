@@ -37,15 +37,6 @@
 import toDo from "./toDo";
 
 export default {
-  // setup(props) {
-  //   const setStorage = () => {
-  //     localStorage.setItem("todoList", JSON.stringify(props.todos));
-  //   };
-  //   return {
-  //     setStorage,
-  //   };
-  // },
-
   components: {
     toDo,
   },

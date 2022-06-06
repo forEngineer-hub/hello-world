@@ -24,10 +24,10 @@
   </select>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useRoute } from "vue-router";
 import { computed, onMounted } from "vue";
-import { useStore } from "vuex";
+import { useStore } from "../../store/index"
 
 const store = useStore();
 const route = useRoute();
@@ -35,24 +35,21 @@ const goodsId = route.params.goodsId;
 
 
 onMounted(() => {
-  console.log('in onMounted !!!!!!!!!!!!!!!!!!!');
-  store.dispatch("setGoodsInfo", { goodsId });
+  store.dispatch("setGoodsInfo", goodsId);
 });
 
 let variants = computed(() => store.getters.getVariants);
 
 let firtVarColors = computed(() => {
-  console.log('in computed !!!!!!!!!!!!!!!!!!!');
   if (store.getters.getVariants[0]) 
   return store.getters.getVariants[0].color;
   else
   return [];
 });
 
-const changeColor = (e)=>{
+const changeColor = (e: { target: HTMLInputElement })=>{
     store.commit('setImgList', { "size": size.value, "color": e.target.value })
 }
-//let infoList = computed(() => store.getters.getInfoList);
 let imgList = computed(() => store.getters.getImgList);
 
 let size = computed(() => store.getters.getSize);
